@@ -73,7 +73,7 @@ python run.py load_channels_list
 
 ## Выгрузить свои приватные переписки и файлы в них
 
-Для корретного сохранения переписок необходимо передавать USER_ID текущего пользователя.
+Для корректного сохранения переписок необходимо передавать USER_ID текущего пользователя.
 
 Свой USER_ID можно получить зайдя в свой профиль и нажав на кнопку `More`.
 
@@ -86,5 +86,23 @@ python run.py load_im -u U1R8HTQEQ
 ```shell
 for d in ~/slack_export/direct_messages/* ; do
   python run.py download_files -c `basename $d` -d direct_messages
+done
+```
+
+## Выгрузить свои многопользовательские приватные переписки и файлы в них
+
+Для корректного сохранения переписок необходимо передавать USER_ID текущего пользователя.
+
+Свой USER_ID можно получить зайдя в свой профиль и нажав на кнопку `More`.
+
+```shell
+python run.py load_mpim -u U1R8HTQEQ
+```
+
+Выгрузить файлы:
+
+```shell
+for d in ~/slack_export/multiuser_direct_messages/* ; do
+  python run.py download_files -c `basename $d` -d multiuser_direct_messages
 done
 ```
